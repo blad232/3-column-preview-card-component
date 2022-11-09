@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+:root {
+	--Bright-orange: hsl(31, 77%, 52%);
+	--Dark-cyan: hsl(184, 100%, 22%);
+	--Very-dark-cyan: hsl(179, 100%, 13%);
+	--Transparent-white: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+	--Very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+.container {
+	max-width: 920px;
+	background-color: var(--Very-light-gray);
+}
+
+.card {
+	display: grid;
+	/* grid-template-columns: repeat(3, 1fr); */
+	grid-template-areas: "sedan suvs luxury";
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.sedan-container,
+.suvs-container,
+.luxury-container {
+	padding: 45px;
+	box-sizing: border-box;
+}
+
+.sedan-container {
+	grid-area: sedan;
+	background-color: var(--Bright-orange);
+}
+.suvs-container {
+	grid-area: suvs;
+	background-color: var(--Dark-cyan);
+}
+.luxury-container {
+	grid-area: luxury;
+	background-color: var(--Very-dark-cyan);
+}
+h2 {
+	text-transform: uppercase;
+	font-family: "Big Shoulders Display", cursive;
+	font-size: 3rem;
+	font-weight: 700;
+	color: var(--Very-light-gray);
+}
+p {
+	color: var(--Transparent-white);
+	font-weight: 400;
+	line-height: 2.5rem;
+}
+h2,
+p {
+	margin-top: 40px;
+}
+.card button {
+	margin-top: 60px;
+	background-color: white;
+	padding: 12px 40px;
+	border: 2px solid white;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	font-weight: 700;
+}
+.sedan-container button {
+	color: var(--Bright-orange);
+}
+.suvs-container button {
+	color: var(--Dark-cyan);
+}
+.luxury-container button {
+	color: var(--Very-dark-cyan);
+}
+button:hover {
+	color: white;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 870px) {
+	.container {
+		max-width: 320px;
+	}
+	.card {
+		grid-template-areas: "sedan" "suvs" "luxury";
+	}
+}
